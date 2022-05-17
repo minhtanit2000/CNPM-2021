@@ -1,5 +1,5 @@
 # CNPM-2021
-Selling Cloth Web Online
+Selling Cloth Web Online <br />
 
 Database trong dtb folder: database.sql / ShopOnline.bak 
 
@@ -14,11 +14,11 @@ Với data source là tên server SQL
 
 -> chạy demo
 
-Trang thông thường đăng nhập với
-	tên đăng nhập: test
+Trang thông thường đăng nhập với <br />
+	tên đăng nhập: test <br />
 	mật khẩu: 123
 
-Trang admin có đường dẫn /Admin/Index
-	tên đăng nhập: admin
+Trang admin có đường dẫn /Admin/Index <br />
+	tên đăng nhập: admin <br />
 	mật khẩu: 123
   
