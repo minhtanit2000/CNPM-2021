@@ -1,0 +1,23 @@
+﻿
+@using (Ajax.BeginForm("GetLowPrice", "Product", FormMethod.Post,
+    new AjaxOptions
+    {
+        InsertionMode = InsertionMode.Replace,
+        HttpMethod = "POST",
+        UpdateTargetId = "search-results"
+    }))
+{
+    <div class="d-flex">
+        <div class="modal-content modal-body border-0 p-0">
+            <div class="input-group mb-2">
+                @Html.TextBox("query", null, new { @class = "form-control", @id = "", @name = "query", @placeholder = "Search ..." })
+
+                <button type="submit" class="input-group-text bg-success text-light" value="Search">
+                    <i class="fa fa-fw fa-search text-white"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <a class="h3 text-dark text-decoration-none">Giá thấp</a>
+
+}

@@ -1,0 +1,86 @@
+﻿@model CNPM.Models.account
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/MyLayout.cshtml";
+}
+
+
+<div class="section-wrapper mg-t-20">
+    <label class="section-title">THÔNG TIN TÀI KHOẢN</label>
+    <p class="mg-b-20 mg-sm-b-40">Các thông tin của tài khoản.</p>
+
+    <div class="form-layout form-layout-6">
+
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Id Cart:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.idCart)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Họ tên:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.fullname)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Email:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.Email)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Mật khẩu:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.password)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Ngày sinh:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.birth)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Giới tính:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.gender)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Địa chỉ:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.address)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Số điện thoại:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.sdt)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+    </div><!-- form-layout -->
+    <form class="form-layout mg-t-50">
+        @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.id }, new { @class = "btn btn-primary bd-0 mg-r-10" })
+        @Html.ActionLink("Hủy", "Index",null, new { @class = "btn btn-outline-secondary" })
+       
+    </form>
+
+</div><!-- section-wrapper -->

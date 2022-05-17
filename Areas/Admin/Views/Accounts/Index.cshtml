@@ -1,0 +1,74 @@
+﻿@model IEnumerable<CNPM.Models.account>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/MyLayout.cshtml";
+}
+
+<div class="slim-pageheader">
+    <ol class="breadcrumb slim-breadcrumb">
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-area="Admin" asp-controller="Accounts" asp-action="Index">Quản lí tài khoản</a></li>
+    </ol>
+    <h6 class="slim-pagetitle">Quản lí tài khoản</h6>
+</div><!-- slim-pageheader -->
+
+<div class="section-wrapper">
+
+    <div class="table-responsive">
+        <table class="table mg-b-0">
+            <thead>
+                <tr>
+                    <th width="20%">E-mail</th>
+                    <th>Họ tên</th>
+                    <th>Giới tính</th>
+                    <th>Địa chỉ</th>
+                    <th width="15%">Số điện thoại</th>
+
+                    <th class="w-25" style="text-align: center;">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @if (Model != null && Model.Count() > 0)
+                {
+                    foreach (var item in Model)
+                    {
+                        if (item.id == 1)
+                        {
+
+                        }
+                        else
+                        {
+                        <tr>
+                            <td>@item.Email</td>
+                            <td>@item.fullname</td>
+                            <td>@item.gender</td>
+                            <td>@item.address</td>
+                            <td>@item.sdt</td>
+
+                            <td>
+                                <div class="form-layout">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            @Html.ActionLink("Xem", "Details", new { id = item.id }, new { @class = "btn btn-outline-secondary btn-block" })
+                                        </div>
+                                        <div class="col-lg-4">
+                                            @Html.ActionLink("Sửa", "Edit", new { id = item.id }, new { @class = "btn btn-outline-primary btn-block" })
+                                        </div>
+                                        <div class="col-lg-4">
+                                            @Html.ActionLink("Xóa", "Delete", new { id = item.id }, new { @class = "btn btn-outline-danger btn-block" })
+                                        </div>
+                                    </div>
+                                </div> 
+                            </td>
+                        </tr>
+                        }
+                    }
+                }
+
+
+            </tbody>
+        </table>
+    </div><!-- table-wrapper -->
+</div><!-- section-wrapper -->

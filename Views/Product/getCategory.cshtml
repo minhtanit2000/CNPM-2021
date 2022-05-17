@@ -1,0 +1,12 @@
+﻿@model IEnumerable<CNPM.Models.category>
+
+<ul class="list-unstyled glyphicon-text-color">
+    @foreach (var i in Model)
+    {
+        <li class="pb-3">
+            <a class="d-flex justify-content-between h3 text-decoration-none" href="@Url.Action("getProductFollowMeta","Product", new { meta = i.meta})">
+               @i.name
+            </a>
+        </li>
+    }
+</ul>

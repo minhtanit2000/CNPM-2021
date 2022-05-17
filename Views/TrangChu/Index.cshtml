@@ -1,0 +1,192 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+    //if (Session["userID"] == null)
+    //{
+    //    Response.Redirect("~/Login/Index");
+    //}
+}
+
+<!-- Banner Hero -->
+<div id="BEMI-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-bs-target="#BEMI-hero-carousel" data-bs-slide-to="0" class="active"></li>
+        <li data-bs-target="#BEMI-hero-carousel" data-bs-slide-to="1"></li>
+        <li data-bs-target="#BEMI-hero-carousel" data-bs-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="container">
+                <div class="row p-5">
+                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        <img class="img-fluid" src="~/Content/img/banner_img_01.jpg" alt="">
+                    </div>
+                    <div class="col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="text-align-left align-self-center">
+                            <h1 class="h1 text-success"><b>BEMI</b> eCommerce</h1>
+                            <h3 class="h2">Trang web thương mại điện tử</h3>
+                            <p>Nhà cung cấp và phân phối các sản phẩm, phụ kiện chính hãng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="container">
+                <div class="row p-5">
+                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        <img class="img-fluid" src="~/Content/img/banner_img_02.jpg" alt="">
+                    </div>
+                    <div class="col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="text-align-left">
+                            <h1 class="h1">Phương thức thanh toán</h1>
+                            <p>
+                                Nhanh chóng, tiện lợi, liên kết thẻ một lần duy nhất, khả năng bảo mật cao.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="container">
+                <div class="row p-5">
+                    <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                        <img class="img-fluid" src="~/Content/img/banner_img_03.jpg" alt="">
+                    </div>
+                    <div class="col-lg-6 mb-0 d-flex align-items-center">
+                        <div class="text-align-left">
+                            <h1 class="h1">Sản phẩm chất lượng</h1>
+                            <p>Chúng tôi cung cấp các sản phẩm chất lượng, độ bền cao, đáp ứng đa dạng nhu cầu người dùng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#BEMI-hero-carousel" role="button" data-bs-slide="prev">
+        <i class="fas fa-chevron-left"></i>
+    </a>
+    <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#BEMI-hero-carousel" role="button" data-bs-slide="next">
+        <i class="fas fa-chevron-right"></i>
+    </a>
+</div>
+<!-- / Banner Hero -->
+<!-- Categories Script-->
+<section class="container py-5">
+    <div class="row text-center pt-3">
+        <div class="col-lg-6 m-auto">
+            <h1 class="h1">Cửa hàng</h1>
+            <p>
+                Ghé thăm các sản phẩm tại cửa hàng của chúng tôi
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-4 p-5 mt-3">
+            <a href="#"><img src="~/Content/img/category_img_02.jpg" class="rounded-circle img-fluid border"></a>
+            <h2 class="h5 text-center mt-3 mb-3">Giày thể thao</h2>
+            <p class="text-center"><a href="#" class="btn btn-success">Đi đến cửa hàng</a></p>
+        </div>
+        <div class="col-12 col-md-4 p-5 mt-3">
+            <a href="#"><img src="~/Content/img/category_img_01.jpg" class="rounded-circle img-fluid border"></a>
+            <h5 class="text-center mt-3 mb-3">Đồng hồ</h5>
+            <p class="text-center"><a href="#" class="btn btn-success">Đi đến cửa hàng</a></p>
+        </div>
+        <div class="col-12 col-md-4 p-5 mt-3">
+            <a href="#"><img src="~/Content/img/category_img_03.jpg" class="rounded-circle img-fluid border"></a>
+            <h2 class="h5 text-center mt-3 mb-3">Phụ kiện</h2>
+            <p class="text-center"><a href="#" class="btn btn-success">Đi đến cửa hàng</a></p>
+        </div>
+    </div>
+</section>
+<!-- / Categories Script-->
+<!-- Featured Product -->
+<section class="bg-light">
+    <div class="container py-5">
+        <div class="row text-center py-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Nổi bật</h1>
+                <p>
+                    Các sản phẩm nổi bật trong tháng này
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <a href="#">
+                        <img src="~/Content/img/feature_prod_01.jpg" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <ul class="list-unstyled d-flex justify-content-between">
+                            <li>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-muted fa fa-star"></i>
+                                <i class="text-muted fa fa-star"></i>
+                            </li>
+                            <li class="text-muted text-right">$240.00</li>
+                        </ul>
+                        <a href="#" class="h2 text-decoration-none text-dark">Nike Football Shoes</a>
+                        <p class="card-text">
+                            Nike Mercurial Vapor XIII Pro FG Football Boots
+                        </p>
+                        <p class="text-muted">Reviews (24)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <a href="#">
+                        <img src="~/Content/img/feature_prod_02.jpg" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <ul class="list-unstyled d-flex justify-content-between">
+                            <li>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-muted fa fa-star"></i>
+                                <i class="text-muted fa fa-star"></i>
+                            </li>
+                            <li class="text-muted text-right">$480.00</li>
+                        </ul>
+                        <a href="#" class="h2 text-decoration-none text-dark">Nike Football Shoes</a>
+                        <p class="card-text">
+                            Botines Nike Hypervenom II 2015
+                        </p>
+                        <p class="text-muted">Reviews (48)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="card h-100">
+                    <a href="#">
+                        <img src="~/Content/img/feature_prod_03.jpg" class="card-img-top" alt="...">
+                    </a>
+                    <div class="card-body">
+                        <ul class="list-unstyled d-flex justify-content-between">
+                            <li>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                                <i class="text-warning fa fa-star"></i>
+                            </li>
+                            <li class="text-muted text-right">$360.00</li>
+                        </ul>
+                        <a href="#" class="h2 text-decoration-none text-dark">Sports Glasses</a>
+                        <p class="card-text">
+                            Summner Black Cool Sunglasses Version.02
+                        </p>
+                        <p class="text-muted">Reviews (74)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- / Featured Product -->

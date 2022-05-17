@@ -1,0 +1,152 @@
+﻿@model  IEnumerable<CNPM.Models.product>
+@{
+    ViewBag.Title = "getDescription";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+
+<!-- Content -->
+@foreach (var i in Model)
+{using (Html.BeginForm("BuyProduct", "Cart"))
+    {
+        <section class="bg-light">
+            <div class="container pb-5">
+                <div class="row">
+                    <!-- Slide -->
+                    <div class="col-lg-5 mt-5">
+                        <div class="card mb-3">
+                            <img class="card-img img-fluid" src="~/Content/img/Upload/product/@i.img" alt="Card image cap" id="product-detail">
+                        </div>
+                        <div class="row">
+                            <!-- Controls-->
+                            <div class="col-1 align-self-center">
+                                <a href="#multi-item-example" role="button" data-bs-slide="prev">
+                                    <i class="text-dark fas fa-chevron-left"></i>
+                                </a>
+                            </div>
+                            <!--/ Controls-->
+                            <!-- Carousel Wrapper-->
+                            <div id="multi-item-example" class="col-10 carousel slide carousel-multi-item" data-bs-ride="carousel">
+                                <div class="carousel-inner product-links-wap" role="listbox">
+                                    <!--First Slide-->
+                                    <div class="carousel-item active">
+                                        <div class="row">
+                                            <div class="col-4">
+                                                <a href="#">
+                                                    <img class="card-img img-fluid" src="~/Content/img/Upload/product/@i.img1" alt="Product Image 1">
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="#">
+                                                    <img class="card-img img-fluid" src="~/Content/img/Upload/product/@i.img2" alt="Product Image 2">
+                                                </a>
+                                            </div>
+                                            <div class="col-4">
+                                                <a href="#">
+                                                    <img class="card-img img-fluid" src="~/Content/img/Upload/product/@i.img3" alt="Product Image 3">
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!--/ First Slide-->
+                                </div>
+                            </div>
+                            <!--/ Carousel Wrapper-->
+                            <!-- Controls-->
+                            <div class="col-1 align-self-center">
+                                <a href="#multi-item-example" role="button" data-bs-slide="next">
+                                    <i class="text-dark fas fa-chevron-right"></i>
+                                </a>
+                            </div>
+                            <!--/ Controls-->
+                        </div>
+                    </div>
+                    <!-- / Slide -->
+                    <!-- Detail -->
+
+                    <div class="col-lg-7 mt-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <h1 class="h2">Nike Football - White</h1>
+                                <p class="h3 py-2">$@i.price</p>
+                                <p class="py-2">
+
+                                </p>
+                                <ul class="list-inline">
+                 
+                                </ul>
+
+                                <h6>Mô tả:</h6>
+                                @Html.Raw(@i.description)
+                                <ul class="list-inline">
+                                    <li class="list-inline-item">
+                                        <h6>Màu:</h6>
+                                    </li>
+                                    <li class="list-inline-item">
+                                        @{
+                                            string color = i.color;
+                                            string[] getColor = color.Split(',');
+                                            for (int k = 0; k < getColor.Length; k++)
+                                            {
+                                                string id = "color" + k.ToString();
+                                                <input type="radio" class="btn-check" name="color" id="@id" autocomplete="off">
+                                                <label class="btn btn-secondary btn-color" for="@id">@getColor[k]</label>
+                                            }
+                                        }
+                                        <input type="hidden" name="productColor" id="product-color" value="@getColor[0]">
+                                    </li>
+                                </ul>
+                                <div>
+                                    <input type="hidden" name="product-title" value="Activewear">
+                                    <div class="row">
+                                        <div class="col-auto">
+                                            <ul class="list-inline pb-3">
+                                                <li class="list-inline-item">
+                                                    Size :
+                                                </li>
+                                                @{
+                                                    string size = i.size;
+                                                    string[] getSize = size.Split(',');
+                                                    foreach (var c in getSize)
+                                                    {
+                                                        <li name="productSize" class="list-inline-item"><span name="productSize" class="btn btn-success btn-size">@c</span></li>
+                                                    }
+                                                }
+                                                <input type="hidden" name="productSize" id="product-size" value="@getSize[0]">
+                                            </ul>
+                                        </div>
+                                        <div class="col-auto">
+                                            <ul class="list-inline pb-3">
+                                                <li class="list-inline-item text-right">
+                                                    Quantity
+                                                    <input type="hidden" name="productQuanity" id="product-quanity" value="1">
+                                                </li>
+                                                <li class="list-inline-item"><span class="btn btn-success" id="btn-minus">-</span></li>
+                                                <li class="list-inline-item"><span class="badge bg-secondary" id="var-value">1</span></li>
+                                                <li class="list-inline-item"><span class="btn btn-success" id="btn-plus">+</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <input type="hidden" name="idProduct" value="@i.id">
+
+                                    <div class="row pb-3">
+                                        <div class="col d-grid">
+                                            <button type="submit" class="btn btn-success btn-lg" name="submit" value="buy">Buy</button>
+                                        </div>
+                                        <div class="col d-grid">
+                                            <button type="submit" class="btn btn-success btn-lg" name="submit" value="addtocard">Add To Cart</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / Detail -->
+                </div>
+            </div>
+        </section>
+        <!-- / Content -->
+    }
+
+}
+

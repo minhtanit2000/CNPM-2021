@@ -1,0 +1,152 @@
+﻿@model CNPM.Models.product
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/MyLayout.cshtml";
+}
+<div class="section-wrapper">
+    <label class="section-title">CHỈNH SỦA THÔNG TIN SẢN PHẨM</label>
+    <p class="mg-b-20 mg-sm-b-40">Điều chỉnh các thông tin cần thiết của sản phẩm.</p>
+
+    @using (Html.BeginForm("Edit", "Products", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.id)
+        <div class="form-layout form-layout-4">
+            <div class="row">
+                <label class="col-sm-2 form-control-label">Tên sản phẩm: <span class="tx-danger">*</span></label>
+                <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                    @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập tên sản phẩm" } })
+
+                </div>
+            </div>
+            <div class="row mg-t-20">
+                <label class="col-sm-2 form-control-label">Giá: <span class="tx-danger">*</span></label>
+                <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                    @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập giá sản phẩm" } })
+
+                </div>
+            </div>
+            <div class="row mg-t-20">
+                <label class="col-sm-2 form-control-label">Hình 1: <span class="tx-danger">*</span></label>
+
+                <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                    <div class="custom-file">
+                        <img class="card-img img-fluid w-25" src="/Content/img/Upload/product/@Model.img" alt="Product Image 1">
+                        <div class="custom-file">
+                            <input type="file" name="img" id="img" accept=".jpg,.png,.gif,.jpeg,.bmp" />
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <div class="row mg-t-20">
+                <label class="col-sm-2 form-control-label">Hình 2: <span class="tx-danger">*</span></label>
+
+
+                <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                    <div class="custom-file">
+                        <img class="card-img img-fluid w-25" src="/Content/img/Upload/product/@Model.img1" alt="Product Image 2">
+                        <div class="custom-file">
+                            <input type="file" name="img1" id="img1" accept=".jpg,.png,.gif,.jpeg,.bmp" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-t-20">
+                <label class="col-sm-2 form-control-label">Hình 3: <span class="tx-danger">*</span></label>
+
+                <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                    <div class="custom-file">
+                        <img class="card-img img-fluid w-25" src="/Content/img/Upload/product/@Model.img2" alt="Product Image 3">
+                        <div class="custom-file">
+                            <input type="file" name="img2" id="img2" accept=".jpg,.png,.gif,.jpeg,.bmp" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-t-20">
+                <label class="col-sm-2 form-control-label">Hình 4: <span class="tx-danger">*</span></label>
+
+                <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                    <div class="custom-file">
+                        <img class="card-img img-fluid w-25" src="/Content/img/Upload/product/@Model.img3" alt="Product Image 4">
+                        <div class="custom-file">
+                            <input type="file" name="img3" id="img3" accept=".jpg,.png,.gif,.jpeg,.bmp" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mg-t-20">
+                <label class="col-sm-2 form-control-label">Mô tả: <span class="tx-danger">*</span></label>
+                <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                    @Html.TextArea("description", new { @class = "form-control", @id = "summernote" })
+
+                </div>
+            </div>
+            <div class="row mg-t-20">
+                <label class="col-sm-2 form-control-label">Meta: <span class="tx-danger">*</span></label>
+                <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                    @Html.EditorFor(model => model.meta, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập meta" } })
+
+                </div>
+            </div>
+            <div class="row mg-t-20">
+                <label class="col-sm-2 form-control-label">Size: <span class="tx-danger">*</span></label>
+                <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                    @Html.EditorFor(model => model.size, new { htmlAttributes = new { @class = "form-control", @value = "39", @data_role = "tagsinput", @id = "inputtag1" } })
+                </div>
+            </div>
+            <div class="row mg-t-20">
+                <label class="col-sm-2 form-control-label">Color: <span class="tx-danger">*</span></label>
+                <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                    @Html.EditorFor(model => model.color, new { htmlAttributes = new { @class = "form-control", @value = "39", @data_role = "tagsinput", @id = "inputtag2" } })
+
+                </div>
+            </div>
+            <div class="row mg-t-20">
+                <label class="col-sm-2 form-control-label">Hide: <span class="tx-danger">*</span></label>
+                <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                    @Html.EditorFor(model => model.hide, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập hide" } })
+
+                </div>
+            </div>
+            <div class="row mg-t-20">
+                <label class="col-sm-2 form-control-label">OrderBy: <span class="tx-danger">*</span></label>
+                <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                    @Html.EditorFor(model => model.orderBy, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập OrderBy" } })
+
+                </div>
+            </div>
+            <div class="row mg-t-20">
+                <label class="col-sm-2 form-control-label">CategoryID: <span class="tx-danger">*</span></label>
+                <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                    @Html.EditorFor(model => model.categoryid, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nhập Categoryid" } })
+
+                </div>
+            </div>
+
+            <div class="form-layout-footer mg-lg-t-50">
+                <input type="submit" value="Lưu thông tin" class="btn btn-primary bd-0 mg-r-10" />
+                @Html.ActionLink("Hủy", "Index", null, new { @class = "btn btn-outline-primary" })
+            </div><!-- form-layout-footer -->
+
+        </div><!-- form-layout -->
+
+    }
+
+</div><!-- section-wrapper -->
+
+<script>
+    $(document).ready(function () {
+        $('#summernote').summernote();
+    });
+    $('#dateMask').mask('99/99/9999');
+</script>
+<script>
+    $(function () {
+        $('#inputtag1').tagsinput();
+        $('#inputtag2').tagsinput();
+    });
+</script>
+

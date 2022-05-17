@@ -1,0 +1,26 @@
+﻿@model  IEnumerable<CNPM.Models.menu>
+
+<ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+    @foreach (var i in Model)
+    {
+        if (i.meta == "trang-chu")
+        {
+            <li class="nav-item">
+                <a class="nav-link" href="/">@i.name</a>
+            </li>
+        }
+
+        @*if (i.meta == "cua-hang")
+        {
+            <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("Index", "Product", new {idUser = Session["userID"] })">@i.name</a>
+            </li>
+        }*@
+        else
+        {
+            <li class="nav-item">
+                <a class="nav-link" href="/@i.meta">@i.name</a>
+            </li>
+        }
+    }
+</ul>

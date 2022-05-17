@@ -1,0 +1,147 @@
+﻿@model CNPM.Models.product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/MyLayout.cshtml";
+}
+
+<div class="section-wrapper mg-t-20">
+    <label class="section-title">XÁC NHẬN XÓA SẢN PHẨM</label>
+    <p class="mg-b-20 mg-sm-b-40">Các thông tin của sản phẩm</p>
+
+    <div class="form-layout form-layout-6">
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                ID:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.id)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Tên sản phẩm:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.name)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Giá:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.price)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Hình 1:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                <img class="card-img img-fluid w-25" src="/Content/img/Upload/product/@Model.img" alt="Product Image 1">
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Hình 2:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                <img class="card-img img-fluid w-25" src="/Content/img/Upload/product/@Model.img1" alt="Product Image 2">
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Hình 3:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                <img class="card-img img-fluid w-25" src="/Content/img/Upload/product/@Model.img2" alt="Product Image 3">
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Hình 4:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                <img class="card-img img-fluid w-25" src="/Content/img/Upload/product/@Model.img3" alt="Product Image 4">
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Mô tả:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.Raw(Model.description)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Meta:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.meta)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Size:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.size)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Color:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.color)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                Hide:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.hide)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                OrderBy:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.orderBy)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                DateBegin:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.datebegin)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+        <div class="row no-gutters">
+            <div class="col-5 col-sm-4">
+                CategoryID:
+            </div><!-- col-4 -->
+            <div class="col-7 col-sm-8">
+                @Html.DisplayFor(model => model.categoryid)
+            </div><!-- col-8 -->
+        </div><!-- row -->
+    </div><!-- form-layout -->
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-actions no-color">
+        <input type="submit" value="Xóa" class="btn btn btn-danger bd-0 mg-r-10" /> |
+        @Html.ActionLink("Hủy", "Index", null, new { @class = "btn btn-outline-secondary" })
+
+    </div>
+    }
+
+</div><!-- section-wrapper -->

@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/MyLayout.cshtml";
+}
+
+<div class="section-wrapper">
+    <div class="row">
+        <div class="col-lg-6">
+            <h3 class="tx-inverse mg-b-15">Chào mới đến với trang quản lí!</h3>
+            <p class="mg-b-40">Đây là trang dành cho quản lí dùm để quản lí về tài khoản người dùng và các sản phẩm trên trang web.</p>
+
+            <h6 class="slim-card-title mg-b-15">Thống kê</h6>
+            <div class="row no-gutters">
+                <div class="col-sm-6">
+                    <div class="card card-earning-summary">
+                        <h6>Số lượng tài khoản</h6>
+                        <h1>20</h1>
+                    </div><!-- card -->
+                </div><!-- col-6 -->
+                <div class="col-sm-6">
+                    <div class="card card-earning-summary mg-sm-l--1 bd-t-0 bd-sm-t">
+                        <h6>Số lượng sản phảm</h6>
+                        <h1>20</h1>
+                    </div><!-- card -->
+                </div><!-- col-6 -->
+            </div><!-- row -->
+        </div><!-- col-6 -->
+        <div class="col-lg-6 mg-t-20 mg-sm-t-30 mg-lg-t-0">
+            <div class="card card-dash-headline">
+                <h4>Tiến hành quản lí </h4>
+                <p>chức năng quản lí gồm các các chức năng như thêm, sửa, xóa, xem thông tin của tìa khoản hoặc sản phẩm</p>
+                <div class="row row-sm">
+                    <div class="col-sm-6">
+                        @Html.ActionLink("Quản lí tài khoản", "Index",new { controller = "Accounts", action = "Index" }, new {@class = "btn btn-primary btn-block" })
+                       
+                    </div><!-- col-6 -->
+                    <div class="col-sm-6 mg-t-10 mg-sm-t-0">
+                        @Html.ActionLink("Quản lí sản phẩm", "Index", new { controller = "Products", action = "Index" }, new { @class = "btn btn-success btn-block" })
+                    </div><!-- col-6 -->
+                </div><!-- row -->
+            </div><!-- card -->
+        </div><!-- col-6 -->
+    </div><!-- row -->
+</div>
+
+   

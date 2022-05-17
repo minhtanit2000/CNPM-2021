@@ -1,0 +1,63 @@
+﻿@model CNPM.Models.product
+
+@{
+    ViewBag.Title = "GetLowPrice";
+    Layout = "~/Views/Shared/MyLayout.cshtml";
+}
+<!-- Content -->
+<div class="container py-5">
+    <div class="row">
+        <div class="col-lg-3">
+            <h1 class="h2 pb-4">Sản phẩm</h1>
+            @{Html.RenderAction("getCategory", "Product");}
+        </div>
+
+        <div class="col-lg-9">
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-inline shop-top-menu pb-3 pt-1">
+                        <li class="list-inline-item">
+                            <a class="h3 text-dark text-decoration-none mr-3" href="@Url.Action("Index", "Product")">Tất cả</a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a class="h3 text-dark text-decoration-none mr-3" href="@Url.Action("GetHighPrice", "Product")">Giá cao</a>
+                        </li>
+                        <li class="list-inline-item">
+
+                            <a class="h3 text-dark text-decoration-none" href="@Url.Action("GetLowPrice", "Product")">Giá thấp</a>
+                        </li>
+                    </ul>
+                </div>
+                <div id="search-form" class="col-md-6 pb-4">
+                    @Html.Action("Search", "Product")
+                </div>
+            </div>
+            <div id="search-results" class="row">
+                @{Html.RenderAction("getProduct", "Product", new { price = "low"});}
+            </div>
+            @section scripts{
+                @Scripts.Render("~/Scripts/jquery.unobtrusive-ajax.min.js")
+            }
+
+            <!-- / Product 10 -->
+            <!-- Paging -->
+            <div div="row">
+                <ul class="pagination pagination-lg justify-content-end">
+                    <li class="page-item disabled">
+                        <a class="page-link active rounded-0 mr-3 shadow-sm border-top-0 border-left-0" href="#" tabindex="-1">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link rounded-0 mr-3 shadow-sm border-top-0 border-left-0 text-dark" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a class="page-link rounded-0 shadow-sm border-top-0 border-left-0 text-dark" href="#">3</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- / Paging -->
+
+        </div>
+
+    </div>
+</div>
+
