@@ -1,5 +1,5 @@
 # CNPM-2021
-Selling Cloth Web Online <br />
+Selling Clothes Web Online <br />
 
 Database trong dtb folder: database.sql / ShopOnline.bak 
 
